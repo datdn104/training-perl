@@ -17,17 +17,7 @@ sub new {
 		_name => $name,
 		_email => $email
 	};
-	return bless($self, $class);;
-}
-
-sub init{
-	my ($class, $id, $name, $email) = @_;
-	my $self = {
-		_id => $id,
-		_name => $name,
-		_email => $email
-	};
-	return bless($self, $class);;
+	return bless($self, $class);
 }
 
 #=================================================
@@ -101,10 +91,11 @@ sub find{
 	$sth->execute($id) or die $DBI::errstr;
 	my ($id, $name, $email) = $sth->fetchrow_array();
 	$sth->finish();
-	return new User($name, $email, $id);
+	return new User($name, $email, $id) if $id;
+	return undef;
 }
 
-sub find_all{
+sub findAll{
 	@users = ();
 	my $sth = $dbh->prepare("SELECT * FROM User");
 	$sth->execute() or die $DBI::errstr;

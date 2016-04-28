@@ -8,8 +8,8 @@ my $userid = "root";
 my $password = "123456";
 
 sub connect{
-	print "Connect to DB!\n";
-	return DBI->connect($dns, $userid, $password) or die $DBI::errstr;
+	$dbh = DBI->connect($dns, $userid, $password) or die $DBI::errstr;
+	return $dbh;
 }
 
 1;

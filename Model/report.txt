@@ -1,0 +1,23 @@
+Kịch bản test User.pm
+
+BEGIN{
+	Test xem user có oke hay ko? nếu ko exit luôn;
+	Test xem user có đủ các function: new getId getName getEmail setId setName setEmail save destroy create update find findAll;
+	Test xem user có thể gọi hàm new thành công và trả về 1 object User, nếu ko exit luôn;
+}
+
+SKIP: {
+	Tạo 1 $user;
+	Bỏ qua các test case nếu khởi tạo $user không thành công;
+
+	Test getName;
+	Test getEmail;
+
+	Test save() và find() có exception hay không?
+
+	Test find() với id của $user mới được save() ở trên xem có trả về object User;
+
+	Test hàm update với trường hợp update email;
+
+	Test findAll() và destroy() có exception hay không?
+}
