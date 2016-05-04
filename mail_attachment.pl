@@ -54,12 +54,12 @@ my $transport = Email::Sender::Transport::SMTP::TLS->new(
     host     => 'smtp.gmail.com',
     port     => 587,
     username => 'datdn@nal.vn',
-    password => 'ngocdat7601_'
+    password => 'ngocdat7601'
 );
  
 # send the mail
 try {
-       sendmail( $email_object, {transport => $transport} );
+    sendmail( $email_object, {transport => $transport} );
 } catch {
-       warn "Email sending failed: $_";
+    warn "Email sending failed: $_";
 };
