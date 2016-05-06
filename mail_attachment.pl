@@ -3,6 +3,7 @@ use strict;
 use warnings;
 use Try::Tiny;
 use IO::All;
+use Data::Dumper;
 use Email::MIME;
 use Email::Sender::Simple qw(sendmail);
 use Email::Sender::Transport::SMTP::TLS;
@@ -54,12 +55,14 @@ my $transport = Email::Sender::Transport::SMTP::TLS->new(
     host     => 'smtp.gmail.com',
     port     => 587,
     username => 'datdn@nal.vn',
-    password => 'ngocdat7601'
+    password => 'pasword'
 );
+
+print Dumper($email_object->filename);
  
 # send the mail
-try {
-    sendmail( $email_object, {transport => $transport} );
-} catch {
-    warn "Email sending failed: $_";
-};
+# try {
+#     # sendmail( $email_object, {transport => $transport} );
+# } catch {
+#     warn "Email sending failed: $_";
+# };

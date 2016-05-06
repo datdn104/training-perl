@@ -7,7 +7,7 @@ my $smtp = Net::SMTP::SSL->new('smtp.gmail.com',
                     );
 print $smtp->domain,"\n";
 $sender = 'datdn@nal.vn';
-$password = 'ngocdat7601_';
+$password = 'password';
 $smtp->auth ( $sender, $password ) or die "could not authenticate\n";
 $receiver = 'ngocdat.7601@gmail.com';
 
