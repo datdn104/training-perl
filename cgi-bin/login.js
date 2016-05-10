@@ -5,7 +5,7 @@ $(document).ready(function(){
     var result = $('div#loginResult');
 
     if (email && password) {
-      $.post("/cgi-bin/login.pl", {email: email, password: password}, function(data){
+      $.post("/cgi-bin/login.cgi", {email: email, password: password}, function(data){
           if (data.error) {
             result.text("Error: " + data.error);
             result.addClass("error");

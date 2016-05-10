@@ -1,0 +1,52 @@
+<TMPL_INCLUDE NAME="header.tmpl">
+
+<style type="text/css">
+  #registerContent { width: 350px; margin: 100px auto; }
+  button[type] { margin: 0.5em 0; }
+</style>
+
+<div id="content">
+  <div id="registerContent" class="container">
+    <TMPL_IF NAME="IS_ERROR">
+      <div id="registerError" class="error">
+        <TMPL_LOOP NAME="ERRORS">
+          <TMPL_VAR NAME="MESSAGER">
+          <br>
+        </TMPL_LOOP>
+      </div>
+    </TMPL_IF>
+    <form id="registerForm" name="registerForm" method="post" action="/cgi-bin/register.cgi">
+      <fieldset>
+        <legend>Enter information</legend>
+        <p>
+          <label for="name">Name</label>
+          <br />
+          <input type="text" id="name" name="name" class="text" size="20" />
+        </p>
+        <p>
+          <label for="email">Email</label>
+          <br />
+          <input type="text" id="email" name="email" class="text" size="20" />
+        </p>
+        <p>
+          <label for="password">Password</label>
+          <br />
+          <input type="password" id="password" name="password" class="text" size="20" />
+        </p>
+        <p>
+          <label for="password">Password Confirm</label>
+          <br />
+          <input type="password" id="password_confirm" name="password_confirm" class="text" size="20" />
+        </p>
+        <p>
+          <button type="submit" class="button positive">
+           <img alt="ok" src="http://www.blueprintcss.org/blueprint/plugins/buttons/icons/tick.png" /> 
+           Register
+          </button>
+        </p>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<TMPL_INCLUDE NAME="header.tmpl">

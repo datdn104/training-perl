@@ -1,0 +1,36 @@
+<TMPL_INCLUDE NAME="header.tmpl">
+
+<style type="text/css">
+  #loginContent { width: 350px; margin: 100px auto; }
+  button[type] { margin: 0.5em 0; }
+</style>
+
+<div id="content">
+  <div id="loginContent" class="container">
+    <div id="loginResult" style="display:none;">
+    </div>
+    <form id="loginForm" name="loginForm" method="post" action="">
+      <fieldset>
+        <legend>Enter information</legend>
+        <p>
+          <label for="email">Email</label>
+          <br />
+          <input type="text" id="email" name="email" class="text" size="20" />
+        </p>
+        <p>
+          <label for="password">Password</label>
+          <br />
+          <input type="password" id="password" name="password" class="text" size="20" />
+        </p>
+        <p>
+          <button type="submit" class="button positive">
+           <img alt="ok" src="http://www.blueprintcss.org/blueprint/plugins/buttons/icons/tick.png" /> 
+           Login
+          </button>
+        </p>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<TMPL_INCLUDE NAME="header.tmpl">
