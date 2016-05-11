@@ -21,22 +21,28 @@
         <p>
           <label for="name">Name</label>
           <br />
-          <input type="text" id="name" name="name" class="text" size="20" />
+          <input type="text" id="name" name="name" class="text" size="20" value='<TMPL_VAR NAME="NAME">' />
+          <br />
+          <!-- tmpl_var name="err_name" -->
         </p>
         <p>
           <label for="email">Email</label>
           <br />
-          <input type="text" id="email" name="email" class="text" size="20" />
+          <input type="text" id="email" name="email" class="text" size="20" value='<TMPL_VAR NAME="EMAIL">' />
+          <br />
+          <!-- tmpl_var name="err_email" -->
         </p>
         <p>
           <label for="password">Password</label>
           <br />
-          <input type="password" id="password" name="password" class="text" size="20" />
+          <input type="password" id="password" name="password" class="text" size="20" /><br />
+          <!-- tmpl_var name="err_password" -->
         </p>
         <p>
           <label for="password">Password Confirm</label>
           <br />
-          <input type="password" id="password_confirm" name="password_confirm" class="text" size="20" />
+          <input type="password" id="password_confirm" name="password_confirm" class="text" size="20" /><br />
+          <!-- tmpl_var name="err_password_confirm" -->
         </p>
         <p>
           <button type="submit" class="button positive">
