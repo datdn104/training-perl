@@ -19,10 +19,9 @@ use constant {
 my $cgi = CGI->new;	
 my @errors = ();
 my $template = HTML::Template->new(filename => "register.tmpl");
-print $cgi->header(-type => "text/html", -charset => "utf-8");
+# print $cgi->header(-type => "text/html", -charset => "utf-8");
 
-if ($ENV{'REQUEST_METHOD'} eq "POST") {
-
+if ($cgi->request_method eq "POST") {
 	my $name = $cgi->param("name");
 	my $email = $cgi->param("email");
 	my $password = $cgi->param("password");
@@ -73,8 +72,8 @@ if ($ENV{'REQUEST_METHOD'} eq "POST") {
 		print $cgi->redirect(-url=>'/cgi-bin/login.cgi');
 	}
 
-	print $cgi->header(-type => "text/html", -charset => "utf-8");
-	print Dumper($res->msgs());
+	# print $cgi->header(-type => "text/html", -charset => "utf-8");
+	# print Dumper($res->msgs());
 
 	$dbh->disconnect;
 	$template->param(NAME => $name);
