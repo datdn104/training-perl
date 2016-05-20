@@ -1,11 +1,18 @@
-var codeInput = document.querySelector('.code-input');  
-var codeOutput = document.querySelector('.code-output');
+// var codeInput = document.querySelector('.code-input');  
+// var codeOutput = document.querySelector('.code-output');
 
-console.log(codeInput);
+// console.log(codeInput);
 
-codeInput.addEventListener('input', function(e){
-	console.log("zzzzz");
-    var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
-    var newChar = String.fromCharCode(charCode);
-    codeOutput.innerHTML = codeHighlight(codeInput.value + newChar);
+// codeInput.addEventListener('input', function(e){
+// 	console.log("zzzzz");
+//     var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
+//     var newChar = String.fromCharCode(charCode);
+//     codeOutput.innerHTML = codeHighlight(codeInput.value + newChar);
+// });
+
+$(function(){
+	$('.code-input').on('input', function(e){
+		console.log($(this).val());
+		$('.code-output').html($(this).val());
+	});
 });

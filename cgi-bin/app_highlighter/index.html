@@ -4,37 +4,39 @@
 	<title>Highlighter</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" /> -->
-	<link rel="stylesheet" type="text/css" href="/app_highlighter/css/default.css" />
+	<link rel="stylesheet" type="text/css" href="/app_highlighter/sass/default.css" />
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/app_highlighter/js/default.js"></script>
 
 	<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css"> -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+	<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script> -->
 </head>
 <body>
 
-<div class='code-editor'>
-    <textarea class='code-input'></textarea>
+<div class='content'>
+    <textarea class='code-input' wrap='off'></textarea>
     <pre class='code-output'></pre>
 </div>
 
 <script type="text/javascript">
-var codeInput = document.querySelector('.code-input');  
-var codeOutput = document.querySelector('.code-output');
+// var codeInput = document.querySelector('.code-input');  
+// var codeOutput = document.querySelector('.code-output');
 
-codeInput.addEventListener('input', function(e){
-	console.log("zzzzz");
-    var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
-    var newChar = String.fromCharCode(charCode);
-    // codeOutput.innerHTML = codeHighlight(codeInput.value + newChar);
-    // codeOutput.innerHTML = codeInput.value + newChar;
+// codeInput.addEventListener('input', function(e){
+// 	console.log("zzzzz");
+//     var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
+//     var newChar = String.fromCharCode(charCode);
+//     // codeOutput.innerHTML = codeHighlight(codeInput.value + newChar);
+//     // codeOutput.innerHTML = codeInput.value + newChar;
 
-    output = hljs.highlight('javascript', codeInput.value + newChar); 
-	codeOutput.innerHTML = output;
-});
+//     output = hljs.highlight('javascript', codeInput.value + newChar); 
+// 	codeOutput.innerHTML = output;
+// });
 
-codeInput.addEventListener('scroll', function(e) {  
-    codeOutput.scrollTop = codeInput.scrollTop;
-});
+// codeInput.addEventListener('scroll', function(e) {  
+//     codeOutput.scrollTop = codeInput.scrollTop;
+// });
 </script>
 
 </body>

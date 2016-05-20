@@ -1,0 +1,57 @@
+@mixin border_2 {
+	border: 2px solid #202020;
+	border-radius: 2px;
+}
+
+@mixin button_default {
+	cursor: pointer;
+	height: 28px;
+	width: 28px;
+	@include border_2;
+}
+
+%w_h_22 {
+	width: 22px;
+	height: 22px;
+}
+
+.map {
+    height: 800px;
+    width: 100%;
+}
+#panel_div .olControlNavigationItemActive {
+	background: #226699 url('/open_layer/js/ol2/theme/default/img/pan_on.png');
+	@extend %w_h_22;
+}
+#panel_div .olControlNavigationItemInactive {
+	background: #996622 url('/open_layer/js/ol2/theme/default/img/pan_off.png');
+	@extend %w_h_22;
+}
+/*Zoom Box Control*/
+#panel_div .olControlZoomBoxItemInactive {
+	background:#999933 url('/open_layer/js/ol2/img/drag-rectangle-off.png');
+	@extend %w_h_22;
+}
+#panel_div .olControlZoomBoxItemActive {
+	background:#999966 url('/open_layer/js/ol2/img/drag-rectangle-on.png');
+	@extend %w_h_22;
+}
+/*Zoom to Max Extent Control*/
+#panel_div .olControlZoomToMaxExtentItemInactive {
+	background:#333399 url('/open_layer/js/ol2/img/zoom-world-mini.png');
+	width: 18px;
+	height: 18px;
+}
+.olControlCustomButtonItemInactive {
+	background:#22dd22;
+	@include button_default;
+}
+
+.olControlCustomButtonToggleItemActive {
+	background:#336699;
+	@include button_default;
+}
+.olControlCustomButtonToggleItemInactive {
+	background:#003366;
+	@include button_default;
+}
