@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "Highlighter Basic",
+  "description": "Highlighter Basic",
+  "version": "0.1",
+
+  "browser_action": {
+    "default_icon": "/image/icon/icon128.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "js": ["js/main.js", "lib/jquery-1.12.4.js", "lib/angular.min.js"],
+    "matches": ["*://*/*"]
+  }],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}

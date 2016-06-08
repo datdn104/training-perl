@@ -1,0 +1,41 @@
+body {
+	width: 400px;
+	padding: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif !important
+}
+
+.title-app {
+	margin-bottom: 5px;
+}
+
+.title-text {
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 93px;
+    width: 158px;
+    min-height: 100%;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.panel-body span {
+	font-size: 11px;
+}
+
+.tab-pane {
+	padding-top: 10px;
+}
+
+textarea {
+	max-width: 380px;
+}

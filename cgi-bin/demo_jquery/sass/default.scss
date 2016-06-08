@@ -1,0 +1,135 @@
+@mixin full_size {
+	width: 100%;
+	height: 100%;
+}
+
+html, body {
+	@include full_size;
+}
+
+.content {
+	@include full_size;
+}
+
+@mixin icon {
+	animation: fadeInLoad-like 0.3s;
+	-webkit-animation-timing-function: ease-out;
+	animation-timing-function: ease-out;
+}
+
+
+.feed {
+	width: 500px; height: 473px;
+	background-image: url(http://i.imgur.com/HckmGbj.png);
+	position: relative;
+
+	.like-btn{
+		width: 44px; height: 25px;
+		background: #D0D0D0;
+		position: absolute;
+		cursor: pointer;
+		bottom: 13px; left: 13px;
+
+		&::before {
+			content: ".";
+			opacity: 0;
+			display: block;
+			width: 44px; height: 10px;
+			top: -10px; left: 0px;
+			position: absolute;
+		}
+
+		.reaction-box {
+			width: 312px; height: 55px;
+			background: #FFF;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+			position: absolute;
+			bottom: 35px;
+			left: -22px;
+			border-radius: 28px;
+			display: none;
+
+			.reaction-icon{
+				width: 40px;
+				height: 40px;
+				background-image: url("/demo_jquery/img/icon.png");
+				border-radius: 20px;
+				margin: 8px 3px 0px 8px;
+				text-align: center;
+				float: left;
+				transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				transform: translate(0, 100px) scale(0);
+
+				label {
+					background: #333;
+					color: #FFF;
+					position: relative;
+					top: -24px;
+					padding: 3px 5px;
+					font-size: 11px;
+					border-radius: 10px;
+					visibility: hidden;
+				}
+			}
+
+			.angry {
+				@include icon;
+				background-position: 0px 0px;
+			}
+
+			.flower {
+				@include icon;
+				background-position: 0px -40px;
+			}
+
+			.haha {
+				@include icon;
+				background-position: 0px -80px;
+			}
+
+			.like {
+				@include icon;
+				background-position: 0px -120px;
+			}
+
+			.love {
+				@include icon;
+				background-position: 0px -160px;
+			}
+
+			.sad {
+				@include icon;
+				background-position: 0px -200px;
+			}
+
+			.wow {
+				@include icon;
+				background-position: 0px -240px;
+			}
+		}
+
+		&:hover {
+			background: #718C00;
+
+			.reaction-box {
+				display: block;
+
+				.reaction-icon {
+					&.show {
+			            opacity: 1;
+			            transform: translate(0, 0) scale(1);
+					}
+
+					&:hover {
+						transform: scale(1.2);
+            			transform-origin: bottom;
+
+						label {
+							visibility: visible;
+						}
+					}
+				}
+			}
+		}
+	}
+}

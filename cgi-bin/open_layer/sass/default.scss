@@ -10,14 +10,22 @@
 	@include border_2;
 }
 
+%full_size {
+	width: 100%;
+	height: 100%;
+}
+
 %w_h_22 {
 	width: 22px;
 	height: 22px;
 }
 
+html, body {
+	@extend %full_size;
+}
+
 .map {
-    height: 800px;
-    width: 100%;
+    @extend %full_size;
 }
 #panel_div .olControlNavigationItemActive {
 	background: #226699 url('/open_layer/js/ol2/theme/default/img/pan_on.png');
